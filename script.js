@@ -52,20 +52,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Intersection Observer for Animations
-const observerOptions = {
+const animationObserverOptions = {
     threshold: 0.3
 };
 
-const observer = new IntersectionObserver((entries) => {
+const animationObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('animate');
         }
     });
-}, observerOptions);
+}, animationObserverOptions);
 
 document.querySelectorAll('.animate-on-scroll').forEach((element) => {
-    observer.observe(element);
+    animationObserver.observe(element);
 });
 
 // Dynamic Copyright Year
@@ -148,4 +148,34 @@ packageCards.forEach(card => {
         packageCards.forEach(c => c.classList.remove('selected'));
         card.classList.add('selected');
     });
+});
+
+// Add this to your existing script.js
+
+// Parallax effect
+window.addEventListener('scroll', () => {
+    const parallaxBgs = document.querySelectorAll('.parallax-bg');
+    const scrolled = window.pageYOffset;
+    
+    parallaxBgs.forEach(bg => {
+        bg.style.transform = `translateY(${scrolled * 0.5}px)`;
+    });
+});
+
+// Info card animations
+const parallaxObserverOptions = {
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const parallaxObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+        }
+    });
+}, parallaxObserverOptions);
+
+document.querySelectorAll('.info-card').forEach(card => {
+    parallaxObserver.observe(card);
 });
