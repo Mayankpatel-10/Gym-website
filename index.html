@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ELITE FITNESS</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="cursor"></div>
@@ -24,31 +29,47 @@
     </div>
 
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo-container">
-                <div class="logo">ELITE<span>FITNESS</span></div>
-                <div class="tagline">PUSH YOUR LIMITS</div>
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#home">
+                    <div class="logo">ELITE<span class="text-warning">FITNESS</span></div>
+                    <div class="tagline small text-muted">PUSH YOUR LIMITS</div>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#packages">Packages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-warning text-dark ms-2" href="#">Join Now</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="menu-btn">
-                <div class="menu-btn__burger"></div>
-            </div>
-            
-            <nav class="nav">
-                <ul class="nav-links">
-                    <li><a href="#home" class="nav-link active" data-text="Home">Home</a></li>
-                    <li><a href="#services" class="nav-link" data-text="Services">Services</a></li>
-                    <li><a href="#packages" class="nav-link" data-text="Packages">Packages</a></li>
-                    <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
-                    <li><a href="#" class="cta-btn">Join Now</a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="video-bg">
+            <img src="./images/gym2.jpeg" alt="Gym Background">
+        </div>
+        <div class="hero-overlay"></div>
         <div class="hero-text">
             <h1 class="glitch" data-text="TRANSFORM YOURSELF">TRANSFORM YOURSELF</h1>
             <p class="hero-subtitle">Where fitness meets excellence</p>
@@ -56,12 +77,6 @@
                 <span>Explore Packages</span>
                 <i class="fas fa-arrow-right"></i>
             </a>
-        </div>
-
-        <div class="hero-images">
-            <div class="hero-image hero-image-1"></div>
-            <div class="hero-image hero-image-2"></div>
-            <div class="hero-image hero-image-3"></div>
         </div>
 
         <div class="scroll-indicator">
@@ -72,6 +87,18 @@
                 <span></span>
                 <span></span>
                 <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- First Parallax Section -->
+    <section class="parallax-section">
+        <div class="parallax-bg" style="background-image: url('./images/gym.jpeg')"></div>
+        <div class="content-wrapper">
+            <div class="info-card animate-on-scroll">
+                <h2>Transform Your Body</h2>
+                <p>Experience state-of-the-art equipment and expert guidance to achieve your fitness goals.</p>
+                <a href="#services" class="cta-btn">Explore Services</a>
             </div>
         </div>
     </section>
@@ -145,6 +172,18 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Parallax Section -->
+    <section class="parallax-section">
+        <div class="parallax-bg parallax-bg-2" style="background-image: url('./images/gym-2.jpg')"></div>
+        <div class="content-wrapper">
+            <div class="info-card animate-on-scroll">
+                <h2>Join Our Community</h2>
+                <p>Be part of a motivating environment where fitness enthusiasts push their limits together.</p>
+                <a href="#packages" class="cta-btn">View Packages</a>
             </div>
         </div>
     </section>
@@ -247,56 +286,54 @@
             </div>
 
             <div class="contact-container">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                <!-- Left side - Contact Info -->
+                <div class="contact-info-wrapper">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Our Location</h3>
+                                <p>123 Fitness Street, City Center</p>
+                            </div>
                         </div>
-                        <div class="info-content">
-                            <h3>Our Location</h3>
-                            <p>123 Fitness Street, City Center</p>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Phone Number</h3>
+                                <p>+91 9876543210</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-phone-alt"></i>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Email Address</h3>
+                                <p>info@elitefitness.com</p>
+                            </div>
                         </div>
-                        <div class="info-content">
-                            <h3>Phone Number</h3>
-                            <p>+91 9876543210</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>Email Address</h3>
-                            <p>info@elitefitness.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>Working Hours</h3>
-                            <p>Mon-Sat: 5:00 AM - 11:00 PM<br>Sunday: 7:00 AM - 9:00 PM</p>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Working Hours</h3>
+                                <p>Mon-Sat: 5:00 AM - 11:00 PM<br>Sunday: Closed</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="contact-map">
-                    <div class="map-placeholder">
-                        <div class="map-pin">
-                            <i class="fas fa-map-pin"></i>
-                        </div>
-                        <h3>ELITE FITNESS</h3>
-                        <p>Find us on the map</p>
-                    </div>
+                <!-- Right side - Map -->
+                <div class="contact-map-wrapper">
+                    <div id="googleMap"></div>
                 </div>
             </div>
         </div>
@@ -328,5 +365,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        function initMap() {
+            // Replace these coordinates with your gym's actual location
+            const gymLocation = { lat: 23.0225, lng: 72.5714 }; // Example: Ahmedabad coordinates
+            
+            const map = new google.maps.Map(document.getElementById("googleMap"), {
+                zoom: 15,
+                center: gymLocation,
+                styles: [
+                    {
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#242f3e"}]
+                    },
+                    {
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{"color": "#242f3e"}]
+                    },
+                    {
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#746855"}]
+                    }
+                ] // Dark theme for map
+            });
+            
+            // Add marker for gym location
+            const marker = new google.maps.Marker({
+                position: gymLocation,
+                map: map,
+                title: "ELITE FITNESS",
+                animation: google.maps.Animation.DROP
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 </body>
 </html>
